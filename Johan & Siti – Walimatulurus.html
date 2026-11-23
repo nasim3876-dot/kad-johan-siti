@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ms" class="locked">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Johan &amp; Siti – Walimatulurus</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,400&family=Jost:wght@300;400;500&display=swap">
+<style>
+:root{
+  --bg:#0c2420; --bg2:#10302a; --ivory:#f3ebdd; --gold:#c0994f; --champ:#e6d3a3; --muted:#a9b5ae;
+  --serif:"Cormorant Garamond",Georgia,serif; --sans:"Jost",system-ui,sans-serif;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{background:var(--bg);color-scheme:dark;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ivory);font-family:var(--sans);font-weight:300;line-height:1.7;text-align:center}
+.songket{height:22px;background:
+  linear-gradient(135deg,transparent 45%,var(--gold) 46% 54%,transparent 55%) 0 0/22px 22px,
+  linear-gradient(45deg,transparent 45%,var(--gold) 46% 54%,transparent 55%) 0 0/22px 22px;opacity:.55}
+section{max-width:560px;margin:0 auto;padding:72px 28px}
+.hero{min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;
+  background:radial-gradient(ellipse at 50% 30%,var(--bg2),var(--bg) 70%)}
+.ring{width:132px;height:132px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;position:relative;margin-bottom:36px}
+.ring::after{content:"";position:absolute;inset:8px;border:1px solid rgba(192,153,79,.4);border-radius:50%}
+.ring span{font-family:var(--serif);font-size:44px;font-weight:300;color:var(--champ);letter-spacing:.04em}
+.bismillah{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--muted);margin:0 0 18px}
+h1{font-family:var(--serif);font-weight:300;font-size:clamp(52px,16vw,88px);line-height:1;margin:0;color:var(--ivory)}
+h1 i{display:block;font-size:.42em;color:var(--gold);margin:.35em 0}
+.date{margin-top:34px;font-family:var(--serif);font-size:24px;color:var(--champ)}
+.place{color:var(--muted);font-size:15px;margin:4px 0 0}
+h2{font-family:var(--serif);font-weight:300;font-size:34px;margin:0 0 20px;color:var(--champ)}
+p{margin:0 0 16px}
+.rule{width:64px;height:1px;background:var(--gold);margin:0 auto 28px}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:420px;margin:0 auto}
+.count div{border:1px solid rgba(192,153,79,.45);padding:16px 4px}
+.count b{display:block;font-family:var(--serif);font-weight:300;font-size:38px;color:var(--champ);line-height:1}
+.count small{font-size:12px;color:var(--muted)}
+.card{border:1px solid rgba(192,153,79,.45);outline:1px solid rgba(192,153,79,.2);outline-offset:6px;padding:32px 24px;margin:0 6px}
+.card dl{margin:0}
+.card dt{font-size:13px;color:var(--gold);margin-top:18px}
+.card dt:first-child{margin-top:0}
+.card dd{margin:2px 0 0;font-family:var(--serif);font-size:22px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:28px}
+.btn{display:inline-block;padding:13px 26px;border:1px solid var(--gold);color:var(--champ);text-decoration:none;font-size:15px;letter-spacing:.04em;transition:background .25s,color .25s}
+.btn:hover,.btn:focus-visible{background:var(--gold);color:var(--bg);outline:none}
+.btn.solid{background:var(--gold);color:var(--bg)}
+.btn.solid:hover,.btn.solid:focus-visible{background:var(--champ)}
+footer{padding:48px 28px 64px;color:var(--muted);font-size:14px}
+footer em{font-family:var(--serif);font-size:20px;color:var(--champ)}
+.hero>*{opacity:0}
+.open .hero>*{animation:rise 1.1s cubic-bezier(.2,.7,.2,1) both}
+.hero>*:nth-child(2){animation-delay:.2s}.hero>*:nth-child(3){animation-delay:.4s}
+.hero>*:nth-child(4){animation-delay:.6s}.hero>*:nth-child(5){animation-delay:.8s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.hero>*,.open .hero>*{animation:none;opacity:1}.btn,.flap,.paper,.seal,#intro{transition:none}}
+html.locked{overflow:hidden}
+#intro{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;padding:24px;background:radial-gradient(ellipse at 50% 40%,var(--bg2),var(--bg) 75%);transition:opacity .9s,visibility .9s}
+#intro.gone{opacity:0;visibility:hidden}
+.to{font-family:var(--serif);font-size:22px;color:var(--champ);margin:0;line-height:1.3}
+.hint{font-size:14px;color:var(--muted);margin:0}
+.env{position:relative;width:min(82vw,340px);aspect-ratio:3/2;padding:0;border:1px solid var(--gold);background:#0f2f29;cursor:pointer;color:inherit;font:inherit}
+.env:focus-visible{outline:2px solid var(--champ);outline-offset:6px}
+.paper{position:absolute;left:8%;right:8%;top:8%;bottom:8%;background:var(--ivory);color:var(--bg);display:grid;place-items:start center;padding-top:14px;font-family:var(--serif);font-size:20px;z-index:1;transition:transform .9s .5s cubic-bezier(.2,.7,.2,1)}
+.pocket{position:absolute;inset:0;z-index:2;background:#15403a;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%)}
+.flap{position:absolute;left:0;top:0;width:100%;height:62%;z-index:3;background:#1b4a41;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .7s}
+.seal{position:absolute;left:50%;top:58%;z-index:4;width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--champ),var(--gold));color:var(--bg);display:grid;place-items:center;font-family:var(--serif);font-weight:500;font-size:20px;transition:opacity .3s}
+.opened .flap{transform:rotateX(180deg);z-index:0}
+.opened .seal{opacity:0}
+.opened .paper{transform:translateY(-46%)}
+.form{text-align:left;display:grid;gap:18px;margin-top:8px}
+.form label,.form legend{display:block;font-size:14px;color:var(--gold)}
+.form input:not([type=radio]),.form select,.form textarea{display:block;width:100%;margin-top:6px;padding:12px 14px;background:rgba(243,235,221,.06);border:1px solid rgba(192,153,79,.5);border-radius:0;color:var(--ivory);font:400 16px var(--sans)}
+.form select option{background:var(--bg);color:var(--ivory)}
+.form input:focus-visible,.form select:focus-visible,.form textarea:focus-visible{outline:2px solid var(--champ);outline-offset:2px}
+.form fieldset{border:0;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px 24px}
+.form legend{padding:0;margin-bottom:6px;width:100%}
+.form .opt{display:flex;align-items:center;gap:8px;color:var(--ivory);font-size:16px}
+.form .opt input{accent-color:var(--gold);width:18px;height:18px;margin:0}
+.form button{cursor:pointer;font:400 16px var(--sans);justify-self:center}
+.form #wafallback{justify-self:center}
+.err{margin:0;text-align:center;color:#e8a4a4;font-size:14px;min-height:1.2em}
+</style>
+</head>
+<body>
+<div id="intro" role="dialog" aria-label="Jemputan perkahwinan">
+  <p class="to">Jemputan Walimatulurus</p>
+  <button class="env" id="openBtn" aria-label="Buka kad jemputan">
+    <span class="paper">Johan &amp; Siti</span>
+    <span class="pocket"></span><span class="flap"></span><span class="seal">J&amp;S</span>
+  </button>
+  <p class="hint">Sentuh sampul untuk membuka</p>
+</div>
+<div class="songket" aria-hidden="true"></div>
+
+<section class="hero">
+  <div class="ring" aria-hidden="true"><span>J&amp;S</span></div>
+  <p class="bismillah">Bismillahirrahmanirrahim</p>
+  <h1>Johan<i>&amp;</i>Siti</h1>
+  <p class="date">Rabu, 23 Disember 2026</p>
+  <p class="place">Kota Bharu, Kelantan</p>
+</section>
+
+<section>
+  <div class="rule"></div>
+  <h2>Walimatulurus</h2>
+  <p>Dengan penuh kesyukuran ke hadrat Ilahi, kami menjemput anda hadir meraikan majlis perkahwinan Johan dan Siti.</p>
+  <p>Kehadiran dan doa restu anda akan melengkapkan hari bahagia kami.</p>
+</section>
+
+<section style="padding-top:0">
+  <h2>Menghitung hari</h2>
+  <div class="count" id="count" role="timer" aria-live="off">
+    <div><b id="d">0</b><small>hari</small></div>
+    <div><b id="h">0</b><small>jam</small></div>
+    <div><b id="m">0</b><small>minit</small></div>
+    <div><b id="s">0</b><small>saat</small></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="card">
+    <dl>
+      <dt>Tarikh</dt><dd>Rabu, 23 Disember 2026</dd>
+      <dt>Masa</dt><dd>11.00 pagi – 4.00 petang</dd>
+      <dt>Tempat</dt><dd>Kota Bharu, Kelantan</dd>
+      <dt>Atur cara</dt><dd>Ketibaan tetamu 11.00 pagi<br>Makan beradab 12.30 tengah hari</dd>
+    </dl>
+  </div>
+  <div class="btns">
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Kota+Bharu+Kelantan" target="_blank" rel="noopener">Google Maps</a>
+    <a class="btn" href="https://waze.com/ul?q=Kota%20Bharu%20Kelantan" target="_blank" rel="noopener">Waze</a>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <h2>Sahkan kehadiran</h2>
+  <p>Isi borang ini dan hantar terus kepada kami melalui WhatsApp.</p>
+  <form id="rsvp" class="form" novalidate>
+    <label>Nama penuh<input name="nama" autocomplete="name" required></label>
+    <fieldset><legend>Kehadiran</legend>
+      <label class="opt"><input type="radio" name="hadir" value="Hadir" checked>Hadir</label>
+      <label class="opt"><input type="radio" name="hadir" value="Tidak hadir">Tidak dapat hadir</label>
+    </fieldset>
+    <label id="paxw">Bilangan yang hadir<select name="pax"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+    <label>Ucapan atau doa<textarea name="ucapan" rows="3"></textarea></label>
+    <button class="btn solid" type="submit">Hantar melalui WhatsApp</button>
+    <p class="err" id="err" role="alert"></p>
+    <a class="btn" id="wafallback" hidden target="_blank" rel="noopener">Buka WhatsApp</a>
+  </form>
+</section>
+
+<footer>
+  <em>Johan &amp; Siti</em><br>
+  Terima kasih atas doa dan kehadiran anda.
+</footer>
+<div class="songket" aria-hidden="true"></div>
+
+<script>
+(function(){
+  var target=new Date(2026,11,23,11,0,0).getTime();
+  function pad(n){return String(n)}
+  function tick(){
+    var diff=Math.max(0,target-Date.now());
+    var s=Math.floor(diff/1000);
+    document.getElementById("d").textContent=pad(Math.floor(s/86400));
+    document.getElementById("h").textContent=pad(Math.floor(s%86400/3600));
+    document.getElementById("m").textContent=pad(Math.floor(s%3600/60));
+    document.getElementById("s").textContent=pad(s%60);
+  }
+  tick();setInterval(tick,1000);
+  var WA=""; /* nombor WhatsApp pengantin, contoh 60123456789 */
+  var form=document.getElementById("rsvp"),err=document.getElementById("err"),fb=document.getElementById("wafallback"),paxw=document.getElementById("paxw");
+  form.addEventListener("change",function(){paxw.hidden=form.hadir.value!=="Hadir";});
+  form.addEventListener("submit",function(e){
+    e.preventDefault();
+    var nama=form.nama.value.trim();
+    if(!nama){err.textContent="Sila isi nama penuh anda.";form.nama.focus();return;}
+    err.textContent="";
+    var hadir=form.hadir.value==="Hadir";
+    var msg="Assalamualaikum, saya "+nama+". "+(hadir?"Saya akan hadir ke majlis Johan & Siti pada 23 Disember 2026 ("+form.pax.value+" orang).":"Maaf, saya tidak dapat hadir ke majlis Johan & Siti.");
+    var u=form.ucapan.value.trim(); if(u) msg+="\nUcapan: "+u;
+    var url="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
+    fb.href=url;fb.hidden=false;
+    window.open(url,"_blank","noopener");
+  });
+  var intro=document.getElementById("intro"),btn=document.getElementById("openBtn"),root=document.documentElement,done=false;
+  btn.addEventListener("click",function(){
+    if(done)return;done=true;intro.classList.add("opened");
+    setTimeout(function(){intro.classList.add("gone");root.classList.remove("locked");root.classList.add("open");window.scrollTo(0,0);},1700);
+    setTimeout(function(){intro.style.display="none";},2800);
+  });
+})();
+</script>
+</body>
+</html>
